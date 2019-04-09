@@ -79,6 +79,7 @@ public class RepairTool implements CommandExecutor {
         }
         else {
             sender.sendMessage("Command only available to players.");
+            return true;
         }
         return true;
     }

@@ -3,6 +3,9 @@ version: 1.0
 author: Zach
 main: pmt.terramc.us.Main
 commands:
+  playtime:
+    description: Check your playtime
+    usage: /playtime
   repairme:
     description: Repairs your currently held item
     usage: /repairme

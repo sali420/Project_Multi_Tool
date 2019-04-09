@@ -9,6 +9,7 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable(){
         RepairTool repairTool = new RepairTool(this);
+        PlayTimeCMD playTimeCMD = new PlayTimeCMD(this);
     }
 
     public void onDisable(){
