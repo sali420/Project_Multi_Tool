@@ -47,20 +47,20 @@ public class RepairTool implements CommandExecutor {
                             if (i != null && i.isSimilar(repairCoin)) {
                                 _held.setDamage(0);
                                 held.setItemMeta((ItemMeta) _held);
-                                player.sendMessage("Repaired.");
+                                player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&aItem repaired."));
                                 i.setAmount(i.getAmount() - 1);
                             }
                         }
                     } else {
-                        player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cError: Invalid item."));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: Invalid item."));
                     }
                 } else {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cError: you need at least one Repair Coin to use this command."));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: you need at least one Repair Coin to use this command."));
                 }
             } else if (player.hasPermission("pmt.admin")) {
                 if (args[0].equalsIgnoreCase("give")) {
                     if (args.length == 1) {
-                        player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cError: enter an amount."));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: enter an amount."));
                     } else if (args.length == 2) {
                         try {
                             String amtStr = args[1];
@@ -68,13 +68,13 @@ public class RepairTool implements CommandExecutor {
                             ItemStack coins = repairCoin;
                             coins.setAmount(amt);
                             player.getInventory().addItem(coins);
-                        } catch (NumberFormatException e) {player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cError: invalid amount."));}
+                        } catch (NumberFormatException e) {player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: invalid amount."));}
                     }
                 } else {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cError: Invalid argument(s)"));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: Invalid argument(s)"));
                 }
             } else {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&',"&cError: You do not have permission to do this."));
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: You do not have permission to do this."));
             }
         }
         else {
