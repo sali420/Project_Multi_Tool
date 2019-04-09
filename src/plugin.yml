@@ -1,14 +1,14 @@
 name: ProjectMultiTool
-version: 1.0
+version: 1.2.1
 author: Zach
 main: pmt.terramc.us.Main
 commands:
   playtime:
-    description: Check your playtime
-    usage: /playtime
+    description: Check your or another player's playtime
+    usage: /playtime {player}
   repairme:
-    description: Repairs your currently held item
+    description: Repairs your currently held item using any available repair coins.
     usage: /repairme
   repairme give:
-    description: (Admins) spawn repair coin Item Stacks
+    description: (Admins) spawn repair coins
     usage: /repairme give (amount)

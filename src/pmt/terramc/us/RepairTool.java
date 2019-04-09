@@ -71,7 +71,7 @@ public class RepairTool implements CommandExecutor {
                         } catch (NumberFormatException e) {player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: invalid amount."));}
                     }
                 } else {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: Invalid argument(s)"));
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: Invalid argument(s)."));
                 }
             } else {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: You do not have permission to do this."));
