@@ -1,0 +1,11 @@
+name: ProjectMultiTool
+version: 1.0
+author: Zach
+main: pmt.terramc.us.Main
+commands:
+  repairme:
+    description: Repairs your currently held item
+    usage: /repairme
+  repairme give:
+    description: (Admins) spawn repair coin Item Stacks
+    usage: /repairme give (amount)
