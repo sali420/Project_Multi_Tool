@@ -35,8 +35,8 @@ public class PlayTimeCMD implements CommandExecutor {
             }
             else if (args.length == 1) {
                 String targetStr = args[0];
-                try {
-                    Player target = Bukkit.getPlayer(targetStr);
+                Player target = Bukkit.getPlayer(targetStr);
+                if (target != null) {
                     LocalDateTime playTime = defTime.plusSeconds(target.getTicksLived() / 20);
                     String dispName = target.getDisplayName();
 
@@ -45,12 +45,10 @@ public class PlayTimeCMD implements CommandExecutor {
                             + " &7hours&6, &a" + playTime.getMinute()
                             + " &7minutes&6, &a" + playTime.getSecond()
                             + " &7seconds&6."));
-                } catch (NullPointerException e) {
-                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix +
-                        "&cError: Invalid player name. (Is player online?)"));
+                } else {
+                    player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: Could not obtain player."));
                 }
-            }
-            else { player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: Invalid argument(s)."));}
+            } else { player.sendMessage(ChatColor.translateAlternateColorCodes('&',plugin.prefix + "&cError: Invalid argument(s)."));}
         } else {
             sender.sendMessage("Command only available to players.");
         }

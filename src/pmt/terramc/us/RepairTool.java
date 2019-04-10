@@ -42,7 +42,7 @@ public class RepairTool implements CommandExecutor {
                 if (player.getInventory().containsAtLeast(repairCoin, 1)) {
                     ItemStack held = player.getInventory().getItemInMainHand();
                     Damageable _held = (Damageable) held.getItemMeta();
-                    if (_held.hasDamage()) {
+                    if ((held.getType() != Material.AIR && held.getType() != Material.ELYTRA && held.getType() != Material.TRIDENT) && _held.hasDamage()) {
                         for (ItemStack i : player.getInventory().getContents()) {
                             if (i != null && i.isSimilar(repairCoin)) {
                                 _held.setDamage(0);

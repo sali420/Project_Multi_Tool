@@ -2,6 +2,8 @@ name: ProjectMultiTool
 version: 1.2.1
 author: Zach
 main: pmt.terramc.us.Main
+api-version: 1.13
+
 commands:
   playtime:
     description: Check your or another player's playtime
